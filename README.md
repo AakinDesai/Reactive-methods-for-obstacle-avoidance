@@ -166,3 +166,13 @@ The parameters listed below can be modified in the ```params.yaml``` file.
 
 ```joy_button_idx```: The index of the joystick button used to turn on/off joystick driving.
 
+### Gap_Follow
+
+1. Obtain laser scans and preprocess them.
+2. Find the closest point in the LiDAR ranges array.
+3. Draw a safety bubble around this closest point and set all points inside this bubble to 0. All other non-zero points are now considered gaps or free space. 
+4. Find the max length gap, in other words, the largest number of consecutive non-zero elements in your ranges array.
+5. Find the max length gap, in other words, the largest number of consecutive non-zero elements in your ranges array.
+6. Actuate the car to move towards this goal point by publishing an \texttt{AckermannDriveStamped} to the \texttt{/nav} topic.	
+		
+		
